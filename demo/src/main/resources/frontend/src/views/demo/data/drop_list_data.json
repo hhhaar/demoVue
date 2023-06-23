@@ -1,0 +1,70 @@
+{
+	"groupList": ["A", "B", "C"],
+	"groupAList": ["A-1", "A-2", "A-3", "A-4"],
+	"groupBList": ["B-1", "B-2", "B-3", "B-4", "B-5"],
+	"groupCList": ["C-1", "C-2", "C-3", "C-4", "C-5"],
+	"posList": ["회장", "사장", "부사장", "상무", "전무", "이사", "부장", "차장", "과장", "대리", "사원", "인턴", "임시1", "임시2", "임시3", "임시4", "임시5"],
+	"colorList": ["Black", "White", "Red", "Blue"],
+	"keyValueList": [
+		{ "code": "001", "value": "경영기획본부" },
+		{ "code": "002", "value": "경영본부" },
+		{ "code": "003", "value": "인사부" },
+		{ "code": "004", "value": "영업본부" }
+	],
+	"myList": [
+		{
+			"id": "#Cust0",
+			"date": "2014/10/01",
+			"name": "Steve",
+			"country": "USA",
+			"flag": "usa.png",
+			"product": "IPad Air",
+			"color": "Green"
+		},
+		{
+			"id": "#Cust1",
+			"date": "2014/09/30",
+			"name": "홍길동",
+			"country": "Korea",
+			"flag": "korea.png",
+			"product": "LG G3",
+			"color": "Pink"
+		},
+		{
+			"id": "#Cust2",
+			"date": "2014/09/29",
+			"name": "Yamaha",
+			"country": "Japan",
+			"flag": "japan.png",
+			"product": "IPad Air",
+			"color": "Yellow"
+		},
+		{
+			"id": "#Cust3",
+			"date": "2014/09/28",
+			"name": "Natasha",
+			"country": "UK",
+			"flag": "uk.png",
+			"product": "Galaxy Note3",
+			"color": "Orange"
+		},
+		{
+			"id": "#Cust4",
+			"date": "2014/09/27",
+			"name": "Thuwai",
+			"country": "China",
+			"flag": "china.png",
+			"product": "LG G3",
+			"color": "Violet"
+		},
+		{
+			"id": "#Cust5",
+			"date": "2014/09/26",
+			"name": "Anna",
+			"country": "USA",
+			"flag": "usa.png",
+			"product": "Galaxy S5",
+			"color": "Gray"
+		}
+	]
+}

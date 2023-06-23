@@ -1,0 +1,37 @@
+/* 커스텀 summary total  스타일 */
+.aui-grid-my-footer-sum-total {
+	font-weight: bold;
+	color: #4374d9;
+	text-align: right;
+}
+.aui-grid-my-footer-sum-total2 {
+	text-align: right;
+}
+
+.my-right-column {
+	text-align: right;
+}
+/* 커스텀 열 스타일 */
+.my-column-style {
+	background: #eeeeee;
+	color: #005500;
+	font-weight: bold;
+}
+/* 커스텀 열 스타일 */
+.my-column-style2 {
+	background: #ffebfe;
+	color: #0000ff;
+	font-weight: bold;
+}
+/* 커스텀 행 스타일 */
+.my-row-style {
+	background: #9fc93c;
+	font-weight: bold;
+	color: #22741c;
+}
+/* 커스텀 셀 스타일 */
+.my-cell-style {
+	background: #ff007f;
+	font-weight: bold;
+	color: #fff;
+}

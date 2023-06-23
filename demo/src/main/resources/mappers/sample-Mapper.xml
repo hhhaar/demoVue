@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.app">
+	<select id="selectMenuList" resultType="HashMap">
+	    SELECT 	  MENU_NM AS name
+				, MENU_PATH AS PATH
+				, MENU_URL AS url
+		FROM IMSI_MENU
+	</select>
+	
+	<select id="selectGridDataList" resultType="HashMap">
+	    SELECT 	  IDX
+				, USR_ID
+				, USR_NM
+				, CNTRY
+				, PHONE
+				, COLOR
+				, PRICE
+				, QUAN
+				, TO_CHAR(DT, 'YYYY-MM-DD') AS DT
+		FROM IMSI_USR_DAT
+		WHERE 1=1
+		<if test = 'userId != null and !"".equals(userId)'>
+			AND USR_ID LIKE '%'||#{userId}||'%'
+		</if>
+		ORDER BY IDX DESC
+	</select>
+	<insert id="insertGridData" parameterType="hashMap">
+		INSERT INTO IMSI_USR_DAT(
+			IDX, USR_ID, USR_NM, CNTRY, PHONE, COLOR, PRICE, QUAN, DT
+		) VALUES (
+			IMSI_USR_SEQ.NEXTVAL,
+			#{USR_ID, jdbcType=VARCHAR},
+			#{USR_NM, jdbcType=VARCHAR},
+			#{CNTRY, jdbcType=VARCHAR},
+			#{PHONE, jdbcType=VARCHAR},
+			#{COLOR, jdbcType=VARCHAR},
+			#{PRICE, jdbcType=INTEGER},
+			#{QUAN, jdbcType=INTEGER},
+			SYSDATE
+		)
+	</insert>
+	<update id="updateGridData" parameterType="hashMap"> 
+   		UPDATE IMSI_USR_DAT SET
+			USR_NM = #{USR_NM, jdbcType=VARCHAR}, 
+			CNTRY = #{CNTRY, jdbcType=VARCHAR}, 
+			PHONE = #{PHONE, jdbcType=VARCHAR}, 
+			COLOR = #{COLOR, jdbcType=VARCHAR}, 
+			PRICE = #{PRICE, jdbcType=INTEGER}, 
+			QUAN = #{QUAN, jdbcType=INTEGER}, 
+			DT = TO_DATE(#{DT},'YYYY-MM-DD')
+		WHERE USR_ID = #{USR_ID}
+    </update>
+
+	<delete id="deleteGridData" parameterType="hashMap">
+		DELETE FROM IMSI_USR_DAT WHERE USR_ID = #{USR_ID}
+	</delete>
+</mapper>

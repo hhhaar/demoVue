@@ -1,0 +1,85 @@
+## server
+server:
+  port: 8081
+  servlet:
+    context-path: /
+    application-display-name: eatGoodDemo
+    encoding:
+        charset: UTF-8
+        enabled: true
+        force: true
+    session:
+      timeout: 3600                              # 기본단위 : 초
+
+# Spring
+spring:
+  #profiles
+  profiles: 
+    active: local
+  
+  devtools:
+    livereload:
+      enabled: true
+  
+  datasource:
+    # Hikari
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      connection-timeout: 600000
+      maximum-pool-size: 500
+      max-lifetime: 1800000
+      minimum-idle: 20
+      validation-timeout: 3000
+      idle-timeout: 60000
+
+  thymeleaf:
+    prefix: classpath:/static/
+    check-template-location: true
+    suffix: .html
+    mode: HTML
+    cache: false # default true, 개발 시에는 false로 두는 것이 좋음
+
+mybatis:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package:
+  configuration:
+    jdbc-type-for-null: null
+    
+# log
+logging:
+  level:
+    root:  INFO
+    
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    driver-Class-Name: oracle.jdbc.driver.OracleDriver
+    #jdbc-url: jdbc:oracle:thin:@125.129.62.2:15152:ora11
+    jdbc-url: jdbc:oracle:thin:@192.168.10.183:1521:ora11
+    username: neoib_si
+    password: neoib_si0
+  
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-Class-Name: oracle.jdbc.driver.OracleDriver
+    jdbc-url: jdbc:oracle:thin:@125.129.62.2:15152:ora11
+    username: neoib_si
+    password: neoib_si0
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-Class-Name: oracle.jdbc.driver.OracleDriver
+    jdbc-url: jdbc:oracle:thin:@125.129.62.2:15152:ora11
+    username: neoib_si
+    password: neoib_si0
